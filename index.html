@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VANTE LAB | Museu para Inspiração</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main id="inicio" class="pagina ativa">
+
+    <div class="inicio-container">
+
+      <header class="cabecalho">
+        <h1 class="logo">VANTE LAB</h1>
+        <span class="simbolo-logo" aria-hidden="true">✳</span>
+      </header>
+
+      <p class="subtitulo">
+        MUSEU DIGITAL · INSPIRAÇÃO PESSOAL
+      </p>
+
+      <div class="linha-dourada"></div>
+
+      <section class="boas-vindas">
+        <p class="pequeno-titulo">MEU UNIVERSO DE ESTILO</p>
+
+        <h2>Olá! Que bom te ter aqui novamente!</h2>
+
+        <p class="texto-intro">
+          Seu espaço de descobertas, referências e possibilidades.
+        </p>
+      </section>
+
+      <section class="secao-opcoes">
+        <h2>O que deseja ver hoje?</h2>
+
+        <p>
+          Explore o acervo e encontre sua próxima inspiração.
+        </p>
+
+        <div class="grade-opcoes">
+
+          <button class="opcao" data-categoria="saia">
+            Saia <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="gravata">
+            Gravata <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="calca">
+            Calça <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="blusa">
+            Blusa <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="acessorios">
+            Acessórios <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="tenis">
+            Tênis <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="bota">
+            Bota <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="sobreposicao">
+            Sobreposição <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="maquiagem">
+            Maquiagem <span>↗</span>
+          </button>
+
+          <button class="opcao" data-categoria="cabelo">
+            Cabelo <span>↗</span>
+          </button>
+
+        </div>
+      </section>
+
+      <footer class="rodape-inicio">
+        VANTE LAB © · MEU ESTILO EM DESENVOLVIMENTO
+      </footer>
+
+    </div>
+  </main>
+
+  <main id="acervo" class="pagina">
+
+    <div class="acervo-container">
+
+      <div class="barra-superior"></div>
+
+      <header class="navegacao-acervo">
+        <p class="caminho">VANTE LAB / ACERVO</p>
+
+        <button
+          id="botaoVoltar"
+          class="voltar"
+          aria-label="Voltar para o início"
+        >←</button>
+      </header>
+
+      <p class="pequeno-titulo">COLEÇÃO SELECIONADA</p>
+
+      <h1 id="tituloAcervo" class="titulo-acervo">
+        Gravatas
+      </h1>
+
+      <p id="descricaoAcervo" class="descricao-acervo">
+        Peças coringas e possibilidades de composição.
+      </p>
+
+      <section id="listaPecas" class="lista-pecas">
+      </section>
+
+      <footer class="aviso-acervo">
+        VANTE LAB · SEU ARQUIVO PESSOAL DE ESTILO
+      </footer>
+
+    </div>
+  </main>
+
+  <div
+    id="visualizador"
+    class="visualizador"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visualização do look"
+>
+
+    <div class="visualizador-conteudo">
+
+      <button
+        id="fecharVisualizador"
+        class="fechar-visualizador"
+      >Fechar ✕</button>
+
+      <img id="imagemAmpliada" src="" alt="">
+
+      <p id="nomeLookGrande" class="nome-look-grande"></p>
+
+    </div>
+  </div>
+
+
+  <!-- =====================================
+       FOTOS DO ACERVO — EDITE AQUI!
+
+       Escreva o nome EXATO de cada imagem.
+       Todas as fotos ficam na pasta imagens/.
+
+       Exemplo:
+       "foto": "gravata_azul.jpeg"
+
+       Se não tiver uma foto ainda, deixe "".
+  ====================================== -->
+
+  <script type="application/json" id="fotosAcervo">
+  {
+    "saia": {
+      "pecas": [
+        {
+          "nome": "Saia Azul",
+          "foto": "saia-azul-capa.jpeg",
+          "looks": ["saia-azul-3.jpeg", "saia-azul-1.jpeg", "saia-azul-2.jpeg"]
+        },
+        {
+          "nome": "Saia Preta",
+          "foto": "saia-preta-capa.jpeg",
+          "looks": ["saia-preta-3.jpeg", "saia-preta-2.jpeg", "saia-preta-1.jpeg"]
+        },
+        {
+          "nome": "Saia Vermelha",
+          "foto": "saia-vermelha-capa.jpeg",
+          "looks": ["saia-vermelha-2.jpeg", "saia-vermelha-1.jpeg", "saia-vermelha-3.jpeg"]
+        }
+      ]
+    },
+
+    "gravata": {
+      "pecas": [
+        {
+          "nome": "Gravatas Azul",
+          "foto": "gravata_azul.jpeg",
+          "looks": ["look-gravata-azul-1.png", "look-gravata-azul-3.png", "look-gravata-azul-2.png"]
+        },
+        {
+          "nome": "Gravata Preta",
+          "foto": "gravata_preta.jpeg",
+          "looks": ["look-gravata-preta-2.png", "look-gravata-preta-3.png", "look-gravata-preta-1.png"]
+        },
+        {
+          "nome": "Gravara Vermelha",
+          "foto": "gravata_vermelha.jpeg",
+          "looks": ["look-gravata-vermelha-2.png", "look-gravata-vermelha-3.png", "look-gravata-vermelha-1.png"]
+        }
+      ]
+    },
+
+    "calca": {
+      "pecas": [
+        {
+          "nome": "Calça Azul",
+          "foto": "calça-azul-capa.jpeg",
+          "looks": ["calça-azul-1.jpeg", "calça-azul-2.jpeg", "calça-azul-3.jpeg"]
+        },
+        {
+          "nome": "Calça Cinza",
+          "foto": "calça-cinza-capa.jpeg",
+          "looks": ["calça-cinza-1.jpeg", "calça-cinza-2.jpeg", "calça-cinza-3.jpeg"]
+        },
+        {
+          "nome": "Calça Preta",
+          "foto": "calça-preta-capa.jpeg",
+          "looks": ["calça-preta-1.jpeg", "calça-preta-2.jpeg", "calça-preta-3.jpeg"]
+        }
+      ]
+    },
+
+    "blusa": {
+      "pecas": [
+        {
+          "nome": "Blusa Azul",
+          "foto": "blusa-azul-capa.jpeg",
+          "looks": ["blusa-azul-1.jpeg", "blusa-azul-2.jpeg", "blusa-azul-3.jpeg"]
+        },
+        {
+          "nome": "Blusa Preta",
+          "foto": "blusa-preta-capa.jpeg",
+          "looks": ["blusa-preta-2.jpeg", "blusa-preta-1.jpeg", "blusa-preta-3.jpeg"]
+        },
+        {
+          "nome": "Blusa Vermelha",
+          "foto": "blusa-vermelha-capa.jpeg",
+          "looks": ["blusa-vermelha-1.jpeg", "blusa-vermelha-2.jpeg", "blusa-vermelha-3.jpeg"]
+        },
+        {
+          "nome": "Blusa Branca",
+          "foto": "blusa-branca-capa.jpeg",
+          "looks": ["blusa-branca-2.jpeg", "blusa-branca-1.jpeg", "blusa-branca-3.jpeg"]
+        }
+      ]
+    },
+
+    "acessorios": {
+      "pecas": [
+        {
+          "nome": "Acessórios clássicos",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "Acessórios prateados",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "Acessórios alternativos",
+          "foto": "",
+          "looks": ["", "", ""]
+        }
+      ]
+    },
+
+    "tenis": {
+      "pecas": [
+        {
+          "nome": "O tênis clássico",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "O tênis esportivo",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "O tênis alternativo",
+          "foto": "",
+          "looks": ["", "", ""]
+        }
+      ]
+    },
+
+    "bota": {
+      "pecas": [
+        {
+          "nome": "A bota clássica",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "A bota de plataforma",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "A bota alternativa",
+          "foto": "",
+          "looks": ["", "", ""]
+        }
+      ]
+    },
+
+    "sobreposicao": {
+      "pecas": [
+        {
+          "nome": "A jaqueta clássica",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "O cardigan",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "A sobreposição alternativa",
+          "foto": "",
+          "looks": ["", "", ""]
+        }
+      ]
+    },
+
+    "maquiagem": {
+      "pecas": [
+        {
+          "nome": "A maquiagem clássica",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "A maquiagem colorida",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "A maquiagem alternativa",
+          "foto": "",
+          "looks": ["", "", ""]
+        }
+      ]
+    },
+
+    "cabelo": {
+      "pecas": [
+        {
+          "nome": "O penteado clássico",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "Cabelos com acessórios",
+          "foto": "",
+          "looks": ["", "", ""]
+        },
+        {
+          "nome": "O cabelo alternativo",
+          "foto": "",
+          "looks": ["", "", ""]
+        }
+      ]
+    }
+  }
+  </script>
+
+</body>
+</html>

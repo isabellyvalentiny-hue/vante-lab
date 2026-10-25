@@ -1,0 +1,615 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  --rosa: #8F174F;
+  --rosa-profundo: #59102F;
+  --rosa-suave: #F3E3E9;
+  --dourado: #D6B779;
+  --dourado-escuro: #A7864A;
+  --branco: #FFFCFA;
+  --creme: #F6EEE8;
+  --creme-escuro: #EDE1D7;
+  --texto: #352B30;
+  --texto-suave: #82747B;
+
+  --titulo: 'Playfair Display', Georgia, serif;
+  --texto-fonte: 'DM Sans', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--branco);
+  color: var(--texto);
+  font-family: var(--texto-fonte);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pagina {
+  display: none;
+  min-height: 100vh;
+}
+
+.pagina.ativa {
+  display: block;
+}
+
+
+/* PÁGINA INICIAL */
+
+#inicio {
+  padding: 22px;
+  background: var(--branco);
+}
+
+.inicio-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: calc(100vh - 44px);
+  margin: auto;
+  padding: 48px 55px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--branco);
+  border: 1px solid #EDE5E0;
+  border-radius: 25px;
+  box-shadow: 0 12px 45px #44253008;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--rosa);
+  font-family: var(--titulo);
+  font-size: 39px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.simbolo-logo {
+  color: var(--dourado-escuro);
+  font-size: 31px;
+}
+
+.subtitulo {
+  margin-top: 20px;
+  color: var(--texto-suave);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.linha-dourada {
+  height: 1px;
+  margin: 30px 0 45px;
+  background: var(--dourado);
+}
+
+.pequeno-titulo {
+  margin-bottom: 12px;
+  color: var(--dourado-escuro);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.boas-vindas h2 {
+  max-width: 800px;
+  margin-bottom: 20px;
+
+  color: var(--texto);
+  font-family: var(--titulo);
+  font-size: clamp(36px, 5vw, 57px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.texto-intro {
+  max-width: 650px;
+  margin-bottom: 52px;
+  color: var(--texto-suave);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.secao-opcoes h2 {
+  margin-bottom: 12px;
+  color: var(--rosa);
+  font-family: var(--titulo);
+  font-size: 31px;
+  font-weight: 500;
+}
+
+.secao-opcoes > p {
+  margin-bottom: 28px;
+  color: var(--texto-suave);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* BOTÕES DAS CATEGORIAS */
+
+.grade-opcoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.opcao {
+  min-height: 76px;
+  padding: 19px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  border: 1px solid #E7DCD4;
+  border-radius: 13px;
+  background: var(--branco);
+
+  color: var(--texto);
+  text-align: left;
+  font-family: var(--titulo);
+  font-size: 21px;
+
+  transition: 0.25s;
+}
+
+.opcao span {
+  color: var(--dourado-escuro);
+  font-family: var(--texto-fonte);
+}
+
+.opcao:hover {
+  border-color: var(--dourado);
+  background: #FFF9F0;
+  transform: translateY(-2px);
+}
+
+.rodape-inicio {
+  margin-top: auto;
+  padding-top: 40px;
+  color: var(--texto-suave);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+
+/* PÁGINA DO ACERVO */
+
+#acervo {
+  padding: 0 22px 35px;
+  background: var(--creme);
+}
+
+.acervo-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 35px 42px;
+  background: var(--creme);
+  border-radius: 0 0 24px 24px;
+}
+
+.barra-superior {
+  height: 5px;
+  margin: -35px -42px 28px;
+  background: var(--dourado);
+}
+
+.navegacao-acervo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.caminho {
+  color: var(--texto-suave);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.voltar {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+
+  border: 1px solid #E5D6CA;
+  border-radius: 50%;
+  background: var(--branco);
+
+  color: var(--rosa);
+  font-size: 24px;
+  transition: 0.2s;
+}
+
+.voltar:hover {
+  background: var(--rosa-suave);
+}
+
+.titulo-acervo {
+  margin-bottom: 12px;
+  color: var(--rosa);
+  font-family: var(--titulo);
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.descricao-acervo {
+  margin-bottom: 28px;
+  color: var(--texto-suave);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* CARTÕES DAS PEÇAS */
+
+.lista-pecas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.peca {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #EFE6DF;
+  border-radius: 19px;
+  background: var(--branco);
+  box-shadow: 0 4px 18px #41262F08;
+}
+
+.informacao-peca {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.imagem-principal {
+  display: block;
+  width: 140px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--creme-escuro);
+}
+
+.imagem-principal.sem-foto {
+  object-fit: contain;
+  padding: 20px;
+  border: 1px dashed #D7C6B9;
+}
+
+.identificacao {
+  margin-bottom: 10px;
+  color: var(--dourado-escuro);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+
+.nome-peca {
+  margin-bottom: 10px;
+  color: var(--texto);
+  font-family: var(--titulo);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.texto-peca {
+  color: var(--texto-suave);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ESPAÇOS DOS LOOKS */
+
+.grade-looks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.look {
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+.imagem-look {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid #E9DFD7;
+  border-radius: 10px;
+  background: var(--creme-escuro);
+  transition: 0.25s;
+}
+
+.look:hover .imagem-look {
+  border-color: var(--dourado);
+  transform: translateY(-3px);
+}
+
+.imagem-look.sem-foto {
+  object-fit: contain;
+  padding: 15px;
+  border-style: dashed;
+  cursor: default;
+}
+
+.legenda-look {
+  display: block;
+  margin-top: 10px;
+  color: var(--texto-suave);
+  font-family: var(--titulo);
+  font-size: 14px;
+}
+
+.aviso-acervo {
+  margin-top: 30px;
+  color: var(--texto-suave);
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+/* AMPLIAR IMAGENS */
+
+.visualizador {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+  background: #2D1821F2;
+}
+
+.visualizador.aberto {
+  display: flex;
+}
+
+.visualizador-conteudo {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.visualizador img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  margin: auto;
+  object-fit: contain;
+  border: 1px solid var(--dourado);
+  border-radius: 12px;
+  background: var(--branco);
+}
+
+.fechar-visualizador {
+  margin: 0 auto 17px;
+  padding: 11px 19px;
+  border: 1px solid var(--dourado);
+  border-radius: 30px;
+  background: var(--branco);
+  color: var(--rosa);
+}
+
+.nome-look-grande {
+  margin-top: 16px;
+  color: var(--branco);
+  font-family: var(--titulo);
+  font-size: 22px;
+}
+
+
+/* COMPUTADORES */
+
+@media (min-width: 900px) {
+  .lista-pecas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  #inicio {
+    padding: 9px;
+  }
+
+  .inicio-container {
+    min-height: calc(100vh - 18px);
+    padding: 27px 22px;
+    border-radius: 20px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .subtitulo {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .linha-dourada {
+    margin: 26px 0 35px;
+  }
+
+  .boas-vindas h2 {
+    font-size: 37px;
+  }
+
+  .texto-intro {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  .secao-opcoes h2 {
+    font-size: 27px;
+  }
+
+  .secao-opcoes > p {
+    font-size: 14px;
+  }
+
+  .grade-opcoes {
+    gap: 9px;
+  }
+
+  .opcao {
+    min-height: 65px;
+    padding: 13px 11px;
+    font-size: 17px;
+  }
+
+  .rodape-inicio {
+    padding-top: 30px;
+    font-size: 9px;
+  }
+
+  #acervo {
+    padding: 0 10px 20px;
+  }
+
+  .acervo-container {
+    padding: 25px 15px;
+  }
+
+  .barra-superior {
+    margin: -25px -15px 24px;
+  }
+
+  .titulo-acervo {
+    font-size: 33px;
+  }
+
+  .descricao-acervo {
+    font-size: 14px;
+  }
+
+  .peca {
+    padding: 13px;
+    border-radius: 16px;
+  }
+
+  .informacao-peca {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .imagem-principal {
+    width: 100px;
+    height: 120px;
+  }
+
+  .nome-peca {
+    font-size: 21px;
+  }
+
+  .texto-peca {
+    font-size: 13px;
+  }
+
+  .grade-looks {
+    gap: 8px;
+  }
+
+  .legenda-look {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 350px) {
+  .inicio-container {
+    padding: 22px 15px;
+  }
+
+  .boas-vindas h2 {
+    font-size: 32px;
+  }
+
+  .opcao {
+    padding: 11px 8px;
+    font-size: 14px;
+  }
+
+  .informacao-peca {
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .imagem-principal {
+    width: 78px;
+    height: 100px;
+  }
+
+  .nome-peca {
+    font-size: 18px;
+  }
+}
+
+
+/* ACESSIBILIDADE */
+
+button:focus-visible {
+  outline: 2px solid var(--dourado-escuro);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
